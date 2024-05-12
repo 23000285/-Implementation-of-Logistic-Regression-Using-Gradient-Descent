@@ -9,29 +9,22 @@ To write a program to implement the the Logistic Regression Using Gradient Desce
 
 ## Algorithm:
 
-1. Initialization: Given two endpoints A and B, initialize the starting point to A (x₁, y₁).
+1. Data Preprocessing:
+    * You read the dataset from a CSV file and dropped the “sl_no” and “salary” columns.
 
-2. Calculate Slope and Decision Variable: Compute the slope (m) of the line using the difference in y-coordinates (Δy) and x-coordinates (Δx). 
+    * You converted categorical columns (like “gender,” “ssc_b,” etc.) into numerical codes using .cat.codes.
 
-3. Initialize the decision variable (dᵢ) as 2Δy - Δx.
-Pixel Selection:
+2. Model Training:
+    * You initialized model parameters (theta) with random values.
+    * Defined the sigmoid function and loss function.
+    * Used gradient descent to optimize the model parameters.
+    * Trained the model on the features (X) and labels (Y).
+3. Predictions and Accuracy:
+    * You made predictions using the trained model.
+    * Calculated the accuracy of your predictions.
+4. New Predictions:
+    * You made predictions for two new data points (xnew).
 
-4. If dᵢ < 0, choose the next pixel to the right (xᵢ₊₁ = xᵢ + 1).
-
-5. If dᵢ ≥ 0, choose the next pixel to the right and up (xᵢ₊₁ = xᵢ + 1, yᵢ₊₁ = yᵢ + 1).
-
-6. Update Decision Variable:
-
-7. If the chosen pixel is to the right, update dᵢ as dᵢ = dᵢ + 2Δy.
-
-8. If the chosen pixel is to the right and up, update dᵢ as dᵢ = dᵢ + 2Δy - 2Δx.
-
-9. Repeat Steps 3 and 4:
-
-10. Continue selecting pixels until reaching the endpoint B (x₂, y₂).
-
-11. Plot the Line:
-Plot the selected pixels to form the line from A to B.
 
 ## Program:
 ```python
